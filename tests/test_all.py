@@ -196,5 +196,12 @@ class TestsError:
         self.basic_test("((waza)", "Parenthesis error")
         self.basic_test("((wa(ss)z(dd)a)tot(d(d)o)", "Parenthesis error")
         
+    def test_error8(self):
+        self.basic_test("toto<60>|titi<60>", "The sum of percentage cannot go over 100")
+        self.basic_test(
+            "toto<70>|titi<20>", "The sum of percentage is smaller than 100 "
+                                 "without any possibility to complete"
+        )
+        self.basic_test("toto<100>|titi", "Some events have a probability of 0.")
         
         

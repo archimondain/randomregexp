@@ -10,6 +10,8 @@ import sys
 import logging
 from enum import Enum
 
+from .randregex import RandRegexException
+
 class CountInfos:
     """
     Attributes:
@@ -89,7 +91,7 @@ class CountInfos:
         else:
             if nbEmpty > 0:
                 raise RandRegexException(
-                    "Some events have a probaility of 0."
+                    "Some events have a probability of 0."
                 )
             newinfos = infos
             mult = 1
